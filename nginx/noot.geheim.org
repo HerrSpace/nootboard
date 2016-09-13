@@ -1,0 +1,13 @@
+server {
+    server_name noot.geheim.org;
+    root /var/www/noot.geheim.org;
+    location / {
+        index.html;
+    }
+    location ~* \.(?:ico|css|js|gif|jpe?g|png|svg|mp3|ogg|ttf)$ {
+        expires max;
+        add_header Pragma public;
+        add_header Cache-Control "public";
+    }
+}
+
